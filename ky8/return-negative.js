@@ -15,3 +15,5 @@
 function makeNegative(num) {
     return num > 0 ? -num : num;
 }
+
+console.log("SOLUTION: ", makeNegative(6));
