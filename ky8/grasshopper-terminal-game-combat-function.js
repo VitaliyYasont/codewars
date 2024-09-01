@@ -2,7 +2,6 @@
 //  также возвращает игроку новое здоровье. Здоровье не может быть меньше 0.
 
 
-
 // SOLUTION :
 
 function combat(health, damage) {
@@ -13,5 +12,7 @@ function combat(health, damage) {
    return newHealth
   }
 
-  console.log(combat(200, 30));
-  
+
+//   function combat(текущееЗдоровье, урон) {
+//     return Math.max(0, текущееЗдоровье - урон);
+// }
