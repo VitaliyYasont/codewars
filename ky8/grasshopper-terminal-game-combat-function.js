@@ -1,8 +1,8 @@
-// Создайте боевую функцию, которая забирает текущее здоровье игрока и количество получаемого урона, а
+// ❓ Создайте боевую функцию, которая забирает текущее здоровье игрока и количество получаемого урона, а
 //  также возвращает игроку новое здоровье. Здоровье не может быть меньше 0.
 
 
-// SOLUTION :
+// ✅ SOLUTION :
 
 function combat(health, damage) {
     let newHealth = health - damage
@@ -13,6 +13,6 @@ function combat(health, damage) {
   }
 
 
-//   function combat(текущееЗдоровье, урон) {
-//     return Math.max(0, текущееЗдоровье - урон);
+//   function combat(health, damage) {
+//     return Math.max(0, health - damage);
 // }
