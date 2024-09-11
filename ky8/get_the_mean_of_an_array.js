@@ -9,7 +9,7 @@
 
 // ✅ SOLUTION:
 
-function getAverage(marks){
+function getAverage(marks){ 
     let sum = 0; // сумма оценок
     for (let i= 0; i < marks.length; i++) { // запускаем перебор нашего массива по элементам
         sum = sum + marks[i]; // находим сумму всех оценок с нашего массива
