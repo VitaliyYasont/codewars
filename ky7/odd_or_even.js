@@ -7,21 +7,21 @@
 
 // Примеры:
 // Input: [0]
-// Output: "even"
-
-// Input: [0, 1, 4]
 // Output: "odd"
 
-// Input: [0, -1, -5]
+// Input: [0, 1, 4]
 // Output: "even"
+
+// Input: [0, -1, -5]
+// Output: "odd"
 // Получайте удовольствие!
 
 // ✅ SOLUTION:
 
 function oddOrEven(array) {
-   let sum = 0;
-   for (let i = 0; i < array.length; i++) {
-        sum = sum + array[i];
+   let sum = 0; // переменная для суммы масива
+   for (let i = 0; i < array.length; i++) { // пробегаемся по значениям массива
+        sum = sum + array[i]; // находим сумму значений нашего массива
    }
-   return (sum % 2 === 0) ? 'even' : 'odd';
+   return (sum % 2 === 0) ? 'even' : 'odd'; // возвращаем EVEN если сумма масива четная и ODD если нет
 }
