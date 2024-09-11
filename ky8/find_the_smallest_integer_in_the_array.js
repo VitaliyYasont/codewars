@@ -9,11 +9,11 @@
 // ✅ SOLUTION:
 
 function findSmallestInt(arr) {
-        let min = arr[0];
-        for (let i = 1; i < arr.length; i++) {
-          if (arr[i] < min) {
-            min = arr[i];
+        let min = arr[0]; // - берем переменнуюс первым значением массива
+        for (let i = 1; i < arr.length; i++) { // - идем по всем значениям массива
+          if (arr[i] < min) { // - сравниваем наше первое значение с последующими
+            min = arr[i]; // в случае если следующее значение меньше нашего текущего мы его заменяем на минимальное
           }
         }
-        return min;
+        return min; // - возвращаем минимальное значение из массива
       }
