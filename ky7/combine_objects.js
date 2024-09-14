@@ -17,9 +17,9 @@
 // ✅ SOLUTION:
 
 function combine(...zoebal) {
-    const sum = {}
-    for (let i = 0; i < zoebal.length; i++) {
-        const obj = zoebal[i];
+    const sum = {} создаем новый объект
+    for (let i = 0; i < zoebal.length; i++) { по методу массивов пробегаемся по всему объекту
+        const obj = zoebal[i]; каждый ключ делаем отдельно
         for (const key in obj) {
             if (sum[key] === undefined) { 
                 sum[key] = obj[key]; 
