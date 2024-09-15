@@ -17,13 +17,15 @@
 // ✅ SOLUTION:
 
 function combine(...zoebal) {
-    const sum = {} создаем новый объект
-    for (let i = 0; i < zoebal.length; i++) { по методу массивов пробегаемся по всему объекту
-        const obj = zoebal[i]; каждый ключ делаем отдельно
-        for (const key in obj) {
-            if (sum[key] === undefined) { 
-                sum[key] = obj[key]; 
-            } else { sum[key] += obj[key]; } } }
-    
-    return sum
+    const sum = {} // создаем новый объект
+    for (let i = 0; i < zoebal.length; i++) { // по методу массивов пробегаемся по всему объекту
+        const obj = zoebal[i]; // каждый свойство делаем отдельно
+        for (const key in obj) { // проходим по свойствам объекта и выполняем с ними следующее
+            if (sum[key] === undefined) { // если ключ не найден( тоесть в одиночном экземпляре)
+                sum[key] = obj[key]; // мы перезаписываем одиночное значение
+            } else { sum[key] += obj[key]; // если мы нашли два одинаковых ключа, мы записываем сумму значений этих ключей
+            } 
+        } 
+    }
+    return sum // выводим наш новый объект
 }
