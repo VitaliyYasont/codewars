@@ -21,5 +21,15 @@
 // ✅ SOLUTION:
 
 function nbDig(n, d) {
-    
-}
+    let count = 0
+    for (let k = 0; k <= n; k++) {
+        let kvadrat = k ** 2
+        let stroka = String(kvadrat)
+        for (let i = 0; i < stroka.length; i++) {
+            if(stroka[i] == d){
+                count = count + 1
+            }
+    }
+        }
+        return count
+    }
