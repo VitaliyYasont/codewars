@@ -42,8 +42,14 @@ function trilingualDemocracy(group) {
       return group[0];
     } else if (uniqueLanguages.length === 2) { // двое говорят на одном языке
       for (let i = 0; i < group.length; i++) {
-        if (group[i] !== uniqueLanguages[0]) {
-          return group[i];
+        let count = 0;
+        for (let j = 0; j < group.length; j++) {
+          if (group[j] === group[i]) {
+            count++;
+          }
+        }
+        if (count === 1) {
+          return group[i]; // возвращает язык меньшинства
         }
       }
     } else { // все три человека говорят на разных языках
@@ -54,89 +60,3 @@ function trilingualDemocracy(group) {
       }
     }
   }
-
-
-
-
-
-// input is a string of three chars from the set 'D', 'F', 'I', 'K'
-// output is a single char from this set
-// function trilingualDemocracy(group) {
-//     let result = ''
-      
-//     let language = ['D', 'F', 'I', 'K']
-//     for (let i= 0; i < group.length;) {
-      
-
-//         if (group[i] === group[i+1] && group[i] === group[i+2]) {
-//             return group[i]
-//         } else if (group[i] === group[i+1] && group[i] !== group[i+2]) {
-//             return group[i+2]
-//         }else if (group[i] !== group[i+1] && group[i] === group[i+2]) {
-//             return group[i+1]
-//         }else if (group[i] !== group[i+1] && group[i] !== group[i+2]) {
-//             return group[i]
-//         } else if (group[i] !== group[i+1] && group[i] !== group[i+2] && group[i+1] !== group[i+2]) {
-//             break
-
-        
-//     }
-   
-//     }
-//      return 'D'
-// }
-
-// trilingualDemocracy([])
-// console.log(trilingualDemocracy(['r','t','w']));
-
-// function trilingualDemocracy(group) {
-//     let language = ['D', 'F', 'I', 'K'];
-//     for (let i = 0; i < group.length; i++) {
-//       if (group[i] === group[i+1] && group[i] === group[i+2]) {
-//         return group[i];
-//       } else if (group[i] === group[i+1] && group[i] !== group[i+2]) {
-//         return group[i+2];
-//       } else if (group[i] !== group[i+1] && group[i] === group[i+2]) {
-//         return group[i+1];
-//       } else if (group[i] !== group[i+1] && group[i] !== group[i+2]) {
-//         return group[i];
-//       }
-//     }
-//     // если все значения не равны между собой, вернуть 'D'
-//     return 'D';
-//   }
-
-//   trilingualDemocracy([])
-// console.log(trilingualDemocracy(['ш','t','w']));
-  
-
-
-function trilingualDemocracy(group) {
-    let languages = ['D', 'F', 'I', 'K']; // официальные языки
-    let uniqueLanguages = [...new Set(group)]; // получить уникальные языки в группе
-  
-    if (uniqueLanguages.length === 1) { // все три человека говорят на одном языке
-      return group[0];
-    } else if (uniqueLanguages.length === 2) { // двое говорят на одном языке
-      for (let i = 0; i < group.length; i++) {
-        if (group[i] !== uniqueLanguages[0]) {
-          return group[i];
-        }
-    }
-      } else if (uniqueLanguages.length === 2) {
-        for (let i = 0; i < group.length; i++) {if (group[i] !== uniqueLanguages[1]) {
-          return group[i];
-        }  
-    } else { // все три человека говорят на разных языках
-      for (let i = 0; i < languages.length; i++) {
-        if (!group.includes(languages[i])) {
-          return languages[i];
-        }
-      }
-    }
-  }
-}
-} else if (uniqueLanguages.length === 2) { // двое говорят на одном языке
-    for (let i = 0; i < group.length; i++) {
-      if (group.filter(lang => lang === group[i]).length === 1) {
-        return group[i]; // возвращает язык меньшинства
