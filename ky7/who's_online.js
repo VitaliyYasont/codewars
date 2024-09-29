@@ -1,0 +1,113 @@
+// ❓ У вас есть приложение для группового чата, но кто онлайн!?
+// Вы хотите показать своим пользователям, кто из их друзей 
+// онлайн и доступен для общения!
+// Получив на вход массив объектов, содержащий имена пользователей, 
+// статус и время с момента последнего действия (в минутах), 
+// создайте функцию для определения того, кто находится в Сети 
+// online, offline и away.
+// Если кто-то есть, online но его lastActivity не было более 
+// 10 минут назад, он должен быть рассмотрен away.
+
+// Входные данные имеют следующую структуру:
+
+// [{
+//   username: 'David',
+//   status: 'online',
+//   lastActivity: 10
+// }, {
+//   username: 'Lucy', 
+//   status: 'offline',
+//   lastActivity: 22
+// }, {
+//   username: 'Bob', 
+//   status: 'online',
+//   lastActivity: 104
+// }]
+// Соответствующий результат должен выглядеть следующим образом:
+
+// {
+//   online: ['David'],
+//   offline: ['Lucy'],
+//   away: ['Bob']
+// }
+// Если, например, пользователей нет online результат должен выглядеть следующим образом:
+
+// {
+//   offline: ['Lucy'],
+//   away: ['Bob']
+// }
+// имя пользователя всегда будет a string, статус всегда будет либо 'online', 
+// либо 'offline' (перечисление UserStatus в C #), а LastActivity всегда будет number >= 0.
+
+// Наконец, если у вас нет друзей в вашем приложении для чата, входными данными 
+// будет пустой массив []. В этом случае вы должны вернуть пустой объект {} (пустой словарь в C #).
+
+//  ✅ SOLUTION:
+
+const whosOnline = (friends) => {
+     const on = [];
+     const off = [];
+     const aw = [];
+     
+     for (let i = 0; i < friends.length; i++) {
+        const el = friends[i];
+        if (friends.status === 'online') {
+            if (friends.lastActivity <= 10) {
+                on.push(user.name);
+            } else {
+                aw.push(user.name)
+            }
+        } else {
+            off.push(user.name)
+        }
+        
+     }
+     const itogo = {};
+        if (on.length > 0) {
+          itogo.online = on;
+        }
+        if (off.length > 0) {
+          itogo.offline = off;
+        }
+        if (aw.length > 0) {
+          itogo.away = aw;
+        }
+
+        return itogo
+     }
+   
+
+   
+    function determineUserStatus(users) {
+        const onlineUsers = [];
+        const offlineUsers = [];
+        const awayUsers = [];
+      
+        for (let i = 0; i < users.length; i++) {
+          const user = users[i];
+          if (user.status === 'online') {
+            if (user.lastActivity <= 10) {
+              onlineUsers.push(user.username);
+            } else {
+              awayUsers.push(user.username);
+            }
+          } else {
+            offlineUsers.push(user.username);
+          }
+        }
+      
+        const result = {};
+        if (onlineUsers.length > 0) {
+          result.online = onlineUsers;
+        }
+        if (offlineUsers.length > 0) {
+          result.offline = offlineUsers;
+        }
+        if (awayUsers.length > 0) {
+          result.away = awayUsers;
+        }
+      
+        return result;
+      }
+      
+      Найти еще
