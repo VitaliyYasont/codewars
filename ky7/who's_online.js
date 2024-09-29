@@ -45,69 +45,34 @@
 //  ✅ SOLUTION:
 
 const whosOnline = (friends) => {
-     const on = [];
-     const off = [];
-     const aw = [];
-     
-     for (let i = 0; i < friends.length; i++) {
-        const el = friends[i];
-        if (friends.status === 'online') {
-            if (friends.lastActivity <= 10) {
-                on.push(user.name);
-            } else {
-                aw.push(user.name)
-            }
+    const on = [];
+    const off = [];
+    const aw = [];
+  
+    for (let i = 0; i < friends.length; i++) {
+      const el = friends[i];
+      if (el.status === 'online') { 
+        if (el.lastActivity <= 10) { 
+          on.push(el.username);
         } else {
-            off.push(user.name)
+          aw.push(el.username)
         }
-        
-     }
-     const itogo = {};
-        if (on.length > 0) {
-          itogo.online = on;
-        }
-        if (off.length > 0) {
-          itogo.offline = off;
-        }
-        if (aw.length > 0) {
-          itogo.away = aw;
-        }
-
-        return itogo
-     }
-   
-
-   
-    function determineUserStatus(users) {
-        const onlineUsers = [];
-        const offlineUsers = [];
-        const awayUsers = [];
-      
-        for (let i = 0; i < users.length; i++) {
-          const user = users[i];
-          if (user.status === 'online') {
-            if (user.lastActivity <= 10) {
-              onlineUsers.push(user.username);
-            } else {
-              awayUsers.push(user.username);
-            }
-          } else {
-            offlineUsers.push(user.username);
-          }
-        }
-      
-        const result = {};
-        if (onlineUsers.length > 0) {
-          result.online = onlineUsers;
-        }
-        if (offlineUsers.length > 0) {
-          result.offline = offlineUsers;
-        }
-        if (awayUsers.length > 0) {
-          result.away = awayUsers;
-        }
-      
-        return result;
+      } else {
+        off.push(el.username)
       }
-      
-      Найти еще
+    }
+  
+    const itogo = {};
+    if (on.length > 0) {
+      itogo.online = on;
+    }
+    if (off.length > 0) {
+      itogo.offline = off;
+    }
+    if (aw.length > 0) {
+      itogo.away = aw;
+    }
+  
+    return itogo
+  }
+  
