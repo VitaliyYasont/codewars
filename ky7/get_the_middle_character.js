@@ -34,4 +34,4 @@ function getMiddle(s) {
     return s[midl];
     }
 }
-  
+
